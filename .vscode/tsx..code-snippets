@@ -1,0 +1,17 @@
+{
+    "D-unsplash-random": {
+        "prefix": "D-unsplash-random",
+        "body": ["https://source.unsplash.com/random"],
+        "description": "Generate a random image URL from Unsplash"
+    },
+    "D-unsplash-size-random": {
+        "prefix": "D-unsplash-size-random",
+        "body": ["https://source.unsplash.com/random/${1:size}"],
+        "description": "Generate a random image URL from Unsplash with a specific size"
+    },
+    "D-unsplash-size-search": {
+        "prefix": "D-unsplash-size-search",
+        "body": ["https://source.unsplash.com/${1:size}/?${2:search}"],
+        "description": "Generate an image URL from Unsplash with a specific size and search query"
+    }
+}

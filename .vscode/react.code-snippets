@@ -1,0 +1,39 @@
+{
+    "Print to console": {
+        "prefix": "D-log",
+        "body": ["console.log('$1');", "$2"],
+        "description": "Log a message to the console"
+    },
+    "state-hook": {
+        "prefix": "D-state-hook",
+        "body": [
+            "const [${1:${TM_SELECTED_TEXT}}, set${1/(.+)/${1:/capitalize}/}] = useState('${2:}');",
+            "$0"
+        ],
+        "description": "Generate useState with custom word"
+    },
+    "D-component-default": {
+        "prefix": "D-component-default",
+        "body": [
+            "const ${TM_FILENAME_BASE} = () => {",
+            "  return (",
+            "    <h1>${TM_FILENAME_BASE}</h1>",
+            "  );",
+            "};",
+            "",
+            "export default ${TM_FILENAME_BASE};"
+        ],
+        "description": "Create a stateless arrow functional component with the file name as the component name"
+    },
+    "D-component": {
+        "prefix": "D-component",
+        "body": [
+            "export const ${TM_FILENAME_BASE} = () => {",
+            "  return (",
+            "    <h1>${TM_FILENAME_BASE}</h1>",
+            "  );",
+            "};"
+        ],
+        "description": "Create a stateless arrow functional component with the file name as the component name and 'export' statement"
+    }
+}

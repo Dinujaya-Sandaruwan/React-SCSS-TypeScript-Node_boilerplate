@@ -1,0 +1,85 @@
+{
+    "SCSS @extend": {
+        "prefix": "D-extend",
+        "body": ["@extend .${1:placeholder};", "$0"],
+        "description": "SCSS @extend directive"
+    },
+    "SCSS @use": {
+        "prefix": "D-util",
+        "body": ["@use '../util' as ${1:u};", "$0"],
+        "description": "SCSS @use directive with alias"
+    },
+    "SCSS @if/@else": {
+        "prefix": "D-if",
+        "body": ["@if ${1:condition} {", "\t$0", "} @else {", "\t", "}"],
+        "description": "SCSS @if and @else directives"
+    },
+    "D-color-primary": {
+        "prefix": "D-color-primary",
+        "body": ["var(--primary-color)"],
+        "description": "Insert primary color variable"
+    },
+    "D-color-secondary": {
+        "prefix": "D-color-secondary",
+        "body": ["var(--secondary-color)"],
+        "description": "Insert secondary color variable"
+    },
+    "D-color-tertiary": {
+        "prefix": "D-color-tertiary",
+        "body": ["var(--tertiary-color)"],
+        "description": "Insert tertiary color variable"
+    },
+    "D-color-util": {
+        "prefix": "D-color-util",
+        "body": ["var(--util-color)"],
+        "description": "Insert utility color variable"
+    },
+    "D-color-background": {
+        "prefix": "D-color-background",
+        "body": ["var(--background-color)"],
+        "description": "Insert background color variable"
+    },
+    "D-color-black": {
+        "prefix": "D-color-black",
+        "body": ["var(--black-color)"],
+        "description": "Insert black color variable"
+    },
+    "D-color-white": {
+        "prefix": "D-color-white",
+        "body": ["var(--white-color)"],
+        "description": "Insert white color variable"
+    },
+    "D-breakpoint-up": {
+        "prefix": "D-breakpoint-up",
+        "body": ["@include u.breakpoint-up($1) {", "\t$2", "}"],
+        "description": "Create a breakpoint-up mixin"
+    },
+    "D-breakpoint-down": {
+        "prefix": "D-breakpoint-down",
+        "body": ["@include u.breakpoint-down($1) {", "\t$2", "}"],
+        "description": "Create a breakpoint-down mixin"
+    },
+    "u.rem": {
+        "prefix": "D-rem",
+        "body": ["u.rem($1)"],
+        "description": "Convert a pixel value to rem unit"
+    },
+    "D-rgba": {
+        "prefix": "D-rgba",
+        "body": ["u.colorAlpha(${1:Color}, ${2:Alpha});"],
+        "description": "Create an rgba color value"
+    },
+    "D-gradient": {
+        "prefix": "D-gradient",
+        "body": [
+            "u.create-gradient(${1:Direction}, ${2:Color_01}, ${3:Color_02}, ${4:Color_03});",
+            "// to top | to top right | to right | to bottom right | to bottom | to bottom left | to left | to top left"
+        ],
+        "description": "Create a CSS gradient with customizable direction and colors"
+    },
+    "D-background-full": {
+        "prefix": "D-background-full",
+        "body": ["@include u.full-screen-background('$1');"],
+        "description": "Create a full-screen background mixin"
+    }
+}
