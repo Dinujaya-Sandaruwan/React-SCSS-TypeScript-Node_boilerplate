@@ -1,0 +1,5 @@
+@use '../util' as u;
+
+.class {
+    @include u.full-screen-background('');
+}

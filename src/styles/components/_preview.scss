@@ -1,0 +1,88 @@
+@use '../util' as u;
+
+.preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0 u.rem(10) 0 u.rem(10);
+
+    @include u.breakpoint-down(desktop) {
+        transform: scale(0.75);
+    }
+    @include u.breakpoint-down(tablet) {
+        transform: scale(0.7);
+    }
+    @include u.breakpoint-down(mobile) {
+        transform: scale(0.8);
+    }
+
+    &__images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: u.rem(450);
+
+        .--react-img {
+            animation: rotate 5s infinite linear;
+
+            width: u.rem(350);
+            margin-bottom: u.rem(25);
+        }
+
+        div {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+                width: u.rem(100);
+            }
+        }
+
+        .--type-image {
+            width: u.rem(90);
+            height: u.rem(90);
+        }
+    }
+
+    &__text {
+        text-align: center;
+
+        @include u.breakpoint-up(desktop) {
+            max-width: 68vw;
+        }
+
+        h1 {
+            margin-top: u.rem(50);
+        }
+
+        h5 {
+            letter-spacing: u.rem(5);
+            font-weight: 400;
+            color: var(--secondary-color);
+        }
+        p {
+            color: var(--tertiary-color);
+        }
+
+        h6 {
+            color: var(--util-color);
+            font-size: u.rem(14);
+            letter-spacing: u.rem(5);
+            font-weight: 400;
+            margin-top: u.rem(40);
+        }
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg); /* Initial rotation angle */
+    }
+    100% {
+        transform: rotate(360deg); /* Final rotation angle */
+    }
+}

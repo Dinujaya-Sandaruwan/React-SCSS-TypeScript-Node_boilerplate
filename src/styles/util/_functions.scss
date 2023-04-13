@@ -1,0 +1,67 @@
+@use 'sass:math';
+@use 'sass:color';
+
+// Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
+@function rem($pixels, $context: 16) {
+    @if math.is-unitless($pixels) {
+        @return (math.div($pixels, $context)) * 1rem;
+    } @else {
+        @error 'Don\'t use units when using rem() function; only use numbers.';
+    }
+}
+
+@function em($pixels, $context: 16) {
+    @if math.is-unitless($pixels) {
+        @return math.div($pixels, $context) * 1em;
+    } @else {
+        @error 'Don\'t use units when using em() function; only use numbers.';
+    }
+}
+
+// Change Color Alpha
+
+@function colorAlpha($color, $alpha) {
+    $red: color.red($color);
+    $green: color.green($color);
+    $blue: color.blue($color);
+
+    @return rgba($red, $green, $blue, $alpha);
+}
+
+// Create css graidents
+
+@function create-gradient($direction, $colors...) {
+    $gradient: '';
+
+    @each $color in $colors {
+        $gradient: $gradient + $color + ', ';
+    }
+
+    $gradient: substring($gradient, 1, str-length($gradient) - 2);
+
+    @return #{'#{$direction}-gradient'}($gradient);
+}
+
+// Full screen background
+
+@mixin full-screen-background($image-url) {
+    background-image: url(#{$image-url});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    @media (max-width: 767px) {
+        background-size: contain;
+        &:before {
+            padding-top: 150%;
+        }
+    }
+}
