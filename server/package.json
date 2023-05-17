@@ -1,0 +1,30 @@
+{
+    "name": "server-side-of-react-typescrpt-boilerplate",
+    "version": "1.0.0",
+    "description": "This server use node and express",
+    "main": "index.js",
+    "scripts": {
+        "test": "node test.js",
+        "server": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Dinujaya-Sandaruwan/React-SCSS-TypeScript-Node_boilerplate.git"
+    },
+    "keywords": [
+        "node",
+        "express",
+        "server"
+    ],
+    "author": "Dinujaya Sandaruwan",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Dinujaya-Sandaruwan/React-SCSS-TypeScript-Node_boilerplate/issues"
+    },
+    "homepage": "https://github.com/Dinujaya-Sandaruwan/React-SCSS-TypeScript-Node_boilerplate#readme",
+    "dependencies": {
+        "express": "^4.18.2",
+        "mongoose": "^7.1.1",
+        "nodemon": "^2.0.22"
+    }
+}
