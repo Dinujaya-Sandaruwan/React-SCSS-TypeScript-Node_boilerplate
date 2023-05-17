@@ -7,7 +7,7 @@
     "state-hook": {
         "prefix": "D-state-hook",
         "body": [
-            "const [${1:${TM_SELECTED_TEXT}}, set${1/(.+)/${1:/capitalize}/}] = useState('${2:}');",
+            "const [${1:${TM_SELECTED_TEXT}}, set${1/(.+)/${1:/capitalize}/}] = useState(() => '${2:value}');",
             "$0"
         ],
         "description": "Generate useState with custom word"
@@ -35,5 +35,22 @@
             "};"
         ],
         "description": "Create a stateless arrow functional component with the file name as the component name and 'export' statement"
+    },
+    "D-unsplash-images": {
+        "prefix": "D-unsplash-images",
+        "body": ["'https://source.unsplash.com/${1:size}/?${2:search}'"],
+        "description": "Generate an image URL from Unsplash with a specific size and search query"
+    },
+    "React useEffect": {
+        "prefix": "D-effect",
+        "body": [
+            "useEffect(() => {",
+            "\t// Code to run on component mount",
+            "\treturn () => {",
+            "\t\t// Code to run on component unmount",
+            "\t};",
+            "}, []);"
+        ],
+        "description": "React useEffect hook"
     }
 }
