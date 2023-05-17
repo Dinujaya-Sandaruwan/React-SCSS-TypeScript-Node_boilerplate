@@ -1,0 +1,24 @@
+{
+    "MongoDB Connection": {
+        "prefix": "D-mongo-connect",
+        "body": [
+            "// import mongoose from 'mongoose';",
+            "",
+            "// MongoDB connection URI",
+            "const MONGODB_URI = process.env.MONGO_URI;",
+            "",
+            "// Connect to MongoDB",
+            "mongoose",
+            "    .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })",
+            "    .then(() => {",
+            "        console.log('Connected to MongoDB');",
+            "        // Your further code here",
+            "    })",
+            "    .catch((error) => {",
+            "        console.error('Error connecting to MongoDB:', error);",
+            "    });",
+            ""
+        ],
+        "description": "Connect to MongoDB using Mongoose"
+    }
+}
