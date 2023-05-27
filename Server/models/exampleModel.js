@@ -1,5 +1,5 @@
 // models/exampleModel.js
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 
 // Define the schema for the example model
 const exampleSchema = new mongoose.Schema(
@@ -20,4 +20,4 @@ const exampleSchema = new mongoose.Schema(
 const ExampleModel = mongoose.model('Example', exampleSchema);
 
 // Export the example model
-module.exports = ExampleModel;
+export default ExampleModel;
