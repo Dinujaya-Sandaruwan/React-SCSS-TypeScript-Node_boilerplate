@@ -1,3 +1,5 @@
-export const test = () => {
-    return <></>;
+const Test = () => {
+    return;
 };
+
+export default Test;
