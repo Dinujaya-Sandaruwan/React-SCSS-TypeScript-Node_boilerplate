@@ -75,6 +75,18 @@
             font-weight: 400;
             margin-top: u.rem(40);
         }
+
+        .--counter {
+            button {
+                padding: 5px;
+                border: none;
+                width: 45px;
+                margin: 0px 10px 0px 10px;
+                font-size: u.rem(20);
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
     }
 }
 

@@ -1,6 +1,7 @@
-import Preview from './components/Preview';
+import Preview from './components/preview/Preview';
 
 function App() {
+
     return (
         <div className="App">
             <Preview />
